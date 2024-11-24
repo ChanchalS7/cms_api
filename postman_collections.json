@@ -1,0 +1,170 @@
+{
+  "info": {
+    "name": "CMS API Test Collection",
+    "description": "A Postman collection to test the CMS API endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Sample Post Title\",\n  \"content\": \"This is the content of the sample post.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/posts",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "posts"]
+            }
+          }
+        },
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/posts",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "posts"]
+            }
+          }
+        },
+        {
+          "name": "Get Post by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/posts/:id",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "posts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Post Title\",\n  \"content\": \"Updated content of the post.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/posts/:id",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "posts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3001/api/posts/:id",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "posts", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pages",
+      "item": [
+        {
+          "name": "Create Page",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Sample Page Title\",\n  \"content\": \"This is the content of the sample page.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/pages",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "pages"]
+            }
+          }
+        },
+        {
+          "name": "Get All Pages",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/pages",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "pages"]
+            }
+          }
+        },
+        {
+          "name": "Get Page by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/pages/:id",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "pages", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Page",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Page Title\",\n  \"content\": \"Updated content of the page.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/pages/:id",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "pages", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Page",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3001/api/pages/:id",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "pages", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Plugins",
+      "item": [
+        {
+          "name": "Register Plugin",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Example Plugin\",\n  \"callback\": \"function (eventType, data) { console.log(eventType, data); }\",\n  \"contentBlocks\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/plugins",
+              "host": ["http://localhost:3001"],
+              "path": ["api", "plugins"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
